@@ -9,6 +9,10 @@ Tech stack used:
 To setup:
 - npm install
 
+To setup db:
+- Install mongodb
+- Use scripts in create_db_Final.txt
+
 To run:
 - node app
 
