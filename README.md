@@ -20,7 +20,7 @@ To run:
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-Screen shots:
+Pages preview:
 ![Image description](https://github.com/Saurabh7693/Piano-Meetup-Node/blob/Final-Repo/resources/images/pages/1.png)
 ![Image description](https://github.com/Saurabh7693/Piano-Meetup-Node/blob/Final-Repo/resources/images/pages/2.png)
 ![Image description](https://github.com/Saurabh7693/Piano-Meetup-Node/blob/Final-Repo/resources/images/pages/3.png)
