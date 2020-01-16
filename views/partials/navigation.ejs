@@ -1,0 +1,7 @@
+<nav>
+  <a href="/connection">Connections</a>
+  <% if (locals.userDetails){%>
+    <a href="/savedConnections">Welcome <%=userDetails['firstName']%></a>
+    <a href="/connection/createdConnections">Created Connections</a>
+  <%}%>
+</nav>

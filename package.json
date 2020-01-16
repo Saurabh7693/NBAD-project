@@ -1,0 +1,22 @@
+{
+  "name": "milestone2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "ejs": "^2.7.1",
+    "ejs-lint": "^0.3.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "express-sessions": "^1.0.6",
+    "express-validator": "^6.3.0",
+    "md5": "^2.2.1",
+    "nodemon": "^1.19.3"
+  }
+}

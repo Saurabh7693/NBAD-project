@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/signup.css">
+  </head>
+  <body>
+    <%- include('partials/header.ejs'); %>    
+    <%- include('partials/navigation.ejs'); %>
+    <main>
+      <div class="main-content">
+        <div class="main-header">
+          Welcome to The Keyboard and Piano Group!
+          <h5>Please enter your details to Signup</h5>
+        </div>
+        <form class="form1" action="/signup" method="post">
+          <% if(locals.userPresent){ %>
+            <p>Error: Email id already registered. Try a new one.</p>
+          <% } else if(locals.validationError) { %>
+            <p>Error: <%=validationError%></p>
+          <% }%>
+            <h5>First Name <input type="text" name="firstName" value="First Name"> </h5>
+            <h5>Last Name <input type="text" name="lastName" value="Last Name"> </h5>
+            <h5>Email Address <input type="email" name="email" value="email"> </h5>
+            <h5>Address <input type="text" name="address" value="Address"> </h5>
+            <h5>City <input type="text" name="city" value="City"> </h5>
+            <h5>State <input type="text" name="state" value="State"> </h5>
+            <h5>Zip <input type="number" name="zip" value="12345"> </h5>                                   
+            <h5>Country <input type="text" name="country" value="Country"> </h5>
+            <h5>Password <input type="password" name="password" value=""> </h5>
+            <button class="button1" type="submit" name="button">Signup</button>            
+            <input type ="hidden" name="action" value="signup">
+        </form>
+      </div>
+    </main>
+    <% include partials/footer.ejs%>
+  </body>
+</html>
+ 

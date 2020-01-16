@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <%- include('partials/header.ejs', {userDetails: userDetails}); %>    
+    <%- include('partials/navigation.ejs', {userDetails: userDetails}); %>
+      <main>
+        <div class="main-content">
+          <div class="main-header">
+              Welcome to The Keyboard and Piano Group!
+          </div>
+          <p> A platform to connect with fellow enthusiasts, beginners and experts
+          in the field of keyboard and piano.</p>
+          <p>Here you can learn from fellow painists, jam and practice for gigs and also attend concerts and
+            orchestra for further exploration.</p>
+            <div class="images">
+              <img src="resources/images/learn.jpg" alt="">
+              <img src="resources/images/gig.jpg" alt="">
+              <img src="resources/images/concert1.jpg" alt="">
+            </div>
+          <p>So go ahead and take your first steps in becoming the Mozart
+            you have always dreamt of. Explore the 'Connections' page listed above for all the latest
+          activities and events from this group.</p>
+        </div>
+    </main>
+    <% include ./partials/footer.ejs%>
+  </body>
+</html>

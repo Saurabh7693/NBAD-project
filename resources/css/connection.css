@@ -1,0 +1,189 @@
+header, nav, footer, main, body {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+header {
+  height: 13%;
+}
+.banner {
+  background-image: url(../images/music1.jpg);
+  background-position: left;
+  height: 77%;
+  display: block;
+}
+.left {
+  width: 75%
+  display: block;
+  float: left;
+  height: 80%;
+}
+
+.left a{
+  text-decoration: none;
+}
+.left a h2 {
+  color: burlywood;
+  padding: 10px 0px 0px 80px;
+  font-size: 29px;
+}
+
+.right{
+  display: block;
+  float: right;
+  margin: 35px 200px 0px 0px;
+}
+
+.right a {
+  color: crimson;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 19px;
+}
+img {
+  height: 100%;
+  width: 300px;
+  margin-top: 1.5%;
+  margin-left: 30%;
+  border: 2px solid coral;
+  border-radius: 15px;
+}
+nav {
+  background-color: black;
+  height: 23%;
+  display: table;
+  width: 100%;
+}
+nav a {
+  color: crimson;
+  margin-left: 10%;
+  font-weight: bold;
+  font-size: 19px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 2px 0px 3px 155px;
+}
+main {
+  background-image: url(../images/concert4.jpg);
+  background-position: inherit;
+  height: 79%;
+}
+.main-area {
+  display: block;
+  width: 1200px;
+  height: 97%;
+  background-color: burlywood;
+  margin: 0 auto;
+  border-style: groove;
+  border-radius: 25px;
+  border-width: 5px;
+  border-color: crimson;
+}
+.main-header {
+  text-align: center;
+  font-size: 50px;
+  font-family: cursive;
+  margin: 0;
+  padding: 10px 0px 0px 0px;
+}
+.connection-header {
+  text-align: center;
+  font-size: 35px;
+  font-family: serif;
+  color: darkred;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+.connection-details1 {
+  display: flex;
+  margin: 10px 0px 0px 220px;
+}
+.connection-details1 img {
+  height: 200px;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+.connection-details1 .rest {
+  margin-left: 50px;
+  font-size: 25px;
+  font-style: oblique;
+  line-height: 13px;
+}
+.connection-details2{
+  display: flex;
+  margin-left: 190px;
+  font-size: 20px;
+}
+.connection-details2 p {
+  margin: 31px 150px 0px 10px;
+  font-size: 24px;
+}
+.going{
+  font-size: 30px;
+  line-height: 1px;
+  margin: 5% 0% 0% 34%
+}
+.going .buttons {
+  display: flex;
+}
+.going form {
+  padding-right: 10px;
+}
+.going .buttons .Yes {
+  background-color: #4CAF50;
+  border:0.1em solid black;
+  color: white;
+  border-radius: 5px;
+  padding: 15px 40px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.going .buttons .No {
+  background-color: red;
+  color: white;
+  border:0.1em solid black;
+  border-radius: 5px;
+  padding: 15px 42px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.going .buttons .Maybe {
+  background-color: #4eb5f1;
+  border:0.1em solid black;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #282828;
+  width: 100%;
+  height: 9%;
+  bottom: 0;
+  color: crimson;
+  position: absolute;
+  display: inline;
+  text-align: center;
+}
+
+.footer-contents {
+  display: inline;
+  margin-right: 15px;
+}
+
+.footer-load {
+  margin-top: 25px;
+  margin-left: 10px;
+}

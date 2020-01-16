@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+  </head>
+  <body>
+    <%- include('header.ejs', {userDetails: userDetails}); %>    
+    <%- include('navigation.ejs', {userDetails: userDetails}); %> 
+    <main>
+      <div class="main-content">
+        <div class="main-header">
+          The Keyboard and Piano Group is inteneded as a platform to connect people and professionals
+          in the field of keyboard and piano.
+        </div>
+      </div>
+    </main>
+    <% include footer.ejs%>
+  </body>
+</html>

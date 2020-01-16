@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Connection Page</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+  </head>
+  <body>
+    <%- include('partials/header.ejs', {userDetails: userDetails}); %>    
+    <%- include('partials/navigation.ejs', {userDetails: userDetails}); %>    
+
+    <main>
+     <div class="main-content">
+       <div class="main-header">
+           Connection Detail
+       </div>
+       <div class="connection-header">
+        <%=connection.connectionName%>
+       </div>
+       <div class="connection-details1">
+         <div class="image">
+           <img src="resources/images/beethoven.jpg" alt="Norm">
+         </div>
+         <div class="rest">
+           <div class="elem1">
+             Topic: <%=connection.topic%>          
+           </div>
+           <div class="elem1">
+              Location and Time: <%=connection.datetime%>           
+            </div>           
+         </div>
+       </div>
+       <div class="connection-details2">
+          <h2>Details:</h2>
+          <p><%=connection.details%></p>
+       </div>
+       <div class="going">
+         <h4>10 people are going. Are you?</h4>
+        </div>
+       <div class="buttons">
+         <form class="form" action="/savedConnections?connectionId=<%=connection.connectionID%>&rsvp=Yes" method="POST">
+           <button type="submit" value="Yes" class="Yes">Yes</button>
+           <input type ="hidden" name="action" value="save">
+         </form>
+         <form class="form" action="/savedConnections?connectionId=<%=connection.connectionID%>&rsvp=No" method="POST">           
+           <button type="submit" class="No">No</button>
+           <input type ="hidden" name="action" value="save">           
+         </form>
+         <form class="form" action="/savedConnections?connectionId=<%=connection.connectionID%>&rsvp=Maybe" method="POST">
+          <button type="submit" class="Maybe">Maybe</button>
+          <input type ="hidden" name="action" value="save">
+         </form>
+       </div>
+
+     </div>
+    </main>
+
+    <% include partials/footer.ejs%>
+  </body>
+</html>

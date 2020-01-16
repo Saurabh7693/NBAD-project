@@ -1,0 +1,24 @@
+<header>
+  <div class="banner">
+    <div class="left">
+      <a href="/">
+        <img src="resources/images/logo1.jpg" alt="Keyboard">
+      </a>
+    </div>
+    <div class="right">
+      <% if (locals.userDetails){ %>
+        <a href="/newConnection">Start a new connection</a>        
+        <a href="/savedConnections">My Connections</a>
+      <%} else{%>
+        <a href="/login">Login</a>
+      <%};%>
+
+      <% if (locals.userDetails){%>
+        <a href="/signout">Logout</a>
+      <%} else{%>
+        <a href="/signup">SignUp</a>
+      <%};%>
+        <!-- change this to signout based on session data -->
+    </div>
+  </div>
+</header>

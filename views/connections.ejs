@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Connections</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+  </head>
+  <body>
+    <%- include('partials/header.ejs', {userDetails: userDetails}); %>    
+    <%- include('partials/navigation.ejs', {userDetails: userDetails}); %>
+    <main>
+      <div class="main-content">
+        <%var current_topic = connection_list[0].topic
+        for (var i=0; i < connection_list.length; i++){%>
+            <div class="main-header">
+              <%=connection_list[i].topic%>
+            </div>
+              <% for (var j = i; j < connection_list.length; j++){
+                if(connection_list[j].topic == current_topic){
+                  i = j; %>
+              <ul>
+                <li>
+                  <a href="/connection/<%=connection_list[i].connectionID%>">
+                    <%=connection_list[j].connectionName%>
+                  </a>
+                </li>
+              </ul>
+              <%}
+              else{
+                current_topic=connection_list[j].topic;
+                i = j-1;
+                break;
+              }
+            }
+          }%>
+        </div>
+    </main>
+
+    <% include partials/footer.ejs%>
+  </body>
+</html>

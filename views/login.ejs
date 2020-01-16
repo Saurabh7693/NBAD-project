@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+  </head>
+  <body>
+    <%- include('partials/header.ejs'); %>    
+    <%- include('partials/navigation.ejs'); %>
+    <main>
+      <div class="main-content">
+        <div class="main-header">
+          Welcome to The Keyboard and Piano Group!
+          <h5>Please enter your username and password to login</h5>
+        </div>
+        <form class="form1" action="/login" method="post">
+          <% if(locals.validationError){ %>
+            <p>Error: Either username or password are incorrect. Please try again!</p>
+          <% } %>
+    
+          <% if(locals.signupSuccess){ %>
+            <p> Signup successful. Please Login!</p>
+          <% } %>
+    
+          <% if(locals.msg){ %>
+            <p><%=msg%></p>
+          <% } %>
+            <h5>Username <input type="email" name="username" value=""> </h5>
+            <h5>Password <input type="password" name="password" value=""> </h5>
+            <button class="button1" type="submit" name="button">Login</button>            
+            <input type ="hidden" name="action" value="signIn">
+        </form>
+      </div>
+    </main>
+    <% include partials/footer.ejs%>
+  </body>
+</html>
+ 

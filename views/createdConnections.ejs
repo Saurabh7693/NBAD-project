@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Created Connections</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+  </head>
+  <body>
+    <%- include('partials/header.ejs', {userDetails: userDetails}); %>    
+    <%- include('partials/navigation.ejs', {userDetails: userDetails}); %>    
+    <main>
+      <div class="main-content">
+        <div class="main-header">
+          <%=userDetails['firstName']%>'s Created Connections
+        </div>
+      <table>
+        <tr class="tab-header">
+          <th>Connection</th>
+          <th>Edit</th>
+        </tr>
+        <%for (var i=0; i < connectionDetails.length; i++){%>
+          <tr class="tab-content">
+            <td><%=connectionDetails[i]['connectionName']%></td>
+            <td>
+              <form class="form" action="/connection/updateConnection?action=updateConnection&connectionID=<%=connectionDetails[i]['connectionID']%>" method="GET">
+                <button type="submit" class="button1">Update</button>
+                <input type ="hidden" name="action" value="Update">
+                <input type ="hidden" name="connectionID" value=<%=connectionDetails[i]['connectionID']%>>
+              </form>
+              <form class="form" action="/connection/deleteConnection%>" method="POST">
+                <button type="submit" class="button1">Delete</button>
+                <input type ="hidden" name="action" value="delete">
+                <input type ="hidden" name="connectionID" value=<%=connectionDetails[i]['connectionID']%>>
+               </form>
+            </td>
+          </tr>
+        <%}%>          
+      </table>
+      </div>
+    </main>
+
+    <% include partials/footer.ejs%>
+  </body>
+</html>

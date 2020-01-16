@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+  </head>
+  <body>
+    <%- include('header.ejs', {userDetails: userDetails}); %>    
+    <%- include('navigation.ejs', {userDetails: userDetails}); %>     
+    <main>
+      <div class="main-content">
+        <div class="main-header">
+          You can contact the Keyboard and Piano Group at any of our social media channels or come meet us at
+          any of our events mentioned in the Connections page.
+        </div>
+      </div>
+    </main>
+    <% include footer.ejs%>
+  </body>
+</html>

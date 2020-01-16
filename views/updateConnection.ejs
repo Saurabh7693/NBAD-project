@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Update Connection</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+  </head>
+  <body>    
+    <%- include('partials/header.ejs', {userDetails: userDetails}); %>    
+    <%- include('partials/navigation.ejs', {userDetails: userDetails}); %>
+    <main>
+      <div class="main-content">
+        <form class="form1" action="/connection/updateConnection" method="post">
+          <% if(locals.validationError){ %>
+            <p>Validation Error: <%=validationError%></p>
+          <% } %>  
+          <h5>Topic
+            <select name="Topic">
+              <option value=1>Learn together</option>
+              <option value=2>Practice and Jam sessions</option>
+            </select> 
+          </h5>
+          <h5>Name <input type="text" name="Name" value="<%=connectionDetails.connectionName%>"></h5>
+          <h5>Details <input type="text" name="Details" value="<%=connectionDetails.details%>"></h5>
+          <h5>Where <input type="text" name="Where" value="<%=connectionDetails.datetime.split(',')[0]%>"></h5>
+          <h5>When <input type="date" name="when" min="2019-10-11" value="<%=connectionDetails.datetime.split(',')[1]%>"></h5>
+          <button class="button1" type="submit" name="button">Update</button>
+          <a href="/connection/createdConnections" class="cancel">
+            Cancel
+          </a>
+           <input type ="hidden" name="action" value="updateConnection">     
+           <input type ="hidden" name="connectionID" value=<%=connectionDetails.connectionID %>>
+        </form>
+      </div>
+    </main>
+    <% include partials/footer.ejs%>
+  </body>
+</html>
