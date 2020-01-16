@@ -1,0 +1,119 @@
+
+//Create the database
+use NBAD_DB //Incase the db already exists
+db.dropDatabase() //droping it to create a new one
+use NBAD_DB //creating a new db
+
+//Create collections
+db.createCollection('users')
+db.createCollection('connection')
+db.createCollection('userConnection')
+
+//Insert 2 users
+// Create a counter to autoincrement the userId
+db.counters.insert({_id:"userid",sequence_value:0});
+// Now create a JS function to update the counter value.
+function getNextSequenceValue(sequenceName){
+
+   var sequenceDocument = db.counters.findAndModify({
+      query:{_id: sequenceName },
+      update: {$inc:{sequence_value:1}},
+      new:true
+   });
+	
+   return sequenceDocument.sequence_value;
+}
+
+db.users.insert({
+    "userId": getNextSequenceValue("userid"),
+    "firstName": "James",
+    "lastName": "Bond",
+    "emailId": "jamesbond@gmail.com",
+    "address1": "Baker Street",
+    "city": "London",
+    "state": "London",
+    "zip": "12345",
+    "country": "UK",
+    "password": "$2b$10$pOxyuh8usBwilpaj3NHSEeAY5X285JKv227jV6BA.QupjnKjHdsje"
+});
+
+db.users.insert({
+    "userId": getNextSequenceValue("userid"),    
+    "firstName": "Sunil",
+    "lastName": "Chetri",
+    "emailId": "sunchetri@gmail.com",
+    "address1": "Kormangla",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "zip": "400461",
+    "country": "India",
+    "password": "$2b$10$K6/2.Brc8LEq4c3XSxyWheMkzyoquDVj2CYPr2JDVILD/bCsD6te2"
+});
+
+//Insert 6 connections, 3 for each topic
+db.connection.insert({
+    "connectionID": "BAS101",
+    "connectionName": "Piano 101: Basic keys and notations of piano",
+    "topic": "Learn together",
+    "details": "Norm is an experienced painist who has been playing professionally for 5 years now. He is looking to give back and teach all right from the very basics of keyboard and piano through this series",
+    "datetime": "October 2nd 2019, 5pm",
+    "userId": 2
+});
+
+db.connection.insert({
+    "connectionID": "BAS102",
+    "connectionName": "Scales: Major and minor scales for use in songs",
+    "topic": "Learn together",
+    "details": "Norm is an experienced painist who intends to teach all major and minor scales here",
+    "datetime": "January 2nd 2020, 5pm",
+    "userId": 1,
+});
+
+db.connection.insert({
+    "connectionID": "BAS103",
+    "connectionName": "Music Theory: Sheet music and sight reading with theory lessons",
+    "topic": "Learn together",
+    "details": "Norm is an experienced painist and will introduce music theory here",
+    "datetime": "January 2nd 2020, 5pm",
+    "userId": 2    
+});
+
+db.connection.insert({
+    "connectionID": "JAM101",
+    "connectionName": "Jazz it: Exploring the beauty of Jazz together",
+    "topic": "Practice and Jam sessions",
+    "details": "Come to explore and jam on smooth jaz music",
+    "datetime": "January 10th 2020, 5pm",
+    "userId": 2    
+});
+
+db.connection.insert({
+    "connectionID": "JAM102",
+    "connectionName": "Hip Hop Jam: To practice latest trendy numbers",
+    "topic": "Practice and Jam sessions",
+    "details": "Come to explore and jam on trendy chartbuster music",
+    "datetime": "January 15th 2020, 5pm",
+    "userId": 1    
+});
+
+db.connection.insert({
+    "connectionID": "JAM103",
+    "connectionName": "Rock On: Group to Jam on Greenday's songs",
+    "topic": "Practice and Jam sessions",
+    "details": "Jam session for rock music",
+    "datetime": "January 15th 2020, 5pm",
+    "userId": 1    
+});
+
+//Insert in userConnection
+db.userConnection.insert({
+    userId: 1,
+    connection: {
+        "connectionID": "JAM101",
+        "connectionName": "Jazz it: Exploring the beauty of Jazz together",
+        "topic": "Practice and Jam sessions",
+        "details": "Come to explore and jam on smooth jaz music",
+        "datetime": "January 10th 2020, 5pm"
+    },
+    rsvp: "Yes",
+});
